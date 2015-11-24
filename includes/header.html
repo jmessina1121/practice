@@ -1,0 +1,35 @@
+<header class="site-header cf">
+    <div class="container">
+        <div class="left-header cf"> 
+            <div class="site-title-container">
+                <a href="http://jmessina1121.github.io" class="site-title">{{ site.title }}</a>
+                <div class="title-sub">{{ site.subtitle }}</div>
+            </div>    
+        </div>    
+
+        <nav class="nav-bar">
+            <button id="btn-menu"><img src="http://i.stack.imgur.com/keOWD.png"></button>
+            <ul class="header-nav">
+               {% for nav in site.pages %}
+                  {% if nav.title and nav.title != 'Home' %}
+                    <li>
+                        <a class="nav-link{% if nav.title == page.title %} active {% endif %}" href="{{ site.url }}{{ nav.url }}">
+                            {{ nav.title }}
+                        </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+            </ul>    
+        </nav>
+        <!--
+            <nav class="nav-bar">
+                <ul class="header-nav">
+                    <li><a class="nav-link" href="front-page.html">News</a></li>
+                    <li><a class="nav-link" href="default-page.html">Documents</a></li>
+                    <li><a class="nav-link" href="default-page.html">Your Rights</a></li>
+                    <li><a class="nav-link" href="custom-page.html">Contact Us</a></li>
+                </ul>    
+            </nav>
+        -->    
+    </div>
+</header>
